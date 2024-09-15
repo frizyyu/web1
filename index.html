@@ -101,10 +101,12 @@
             position: absolute;
             width: 99%;
             bottom: 0;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.82);
         }
-        .dot:not(:hover){
+        .dot{
             transition: 1.5s;
-            fill-opacity: 0.5;
         }
         a {
             color: aquamarine;
@@ -200,7 +202,7 @@
                     <th>Y</th>
                     <th>R</th>
                     <th>Время</th>
-                    <th>Время работы (нс)</th>
+                    <th>Время работы (с)</th>
                 </tr>
             </table>
         </div>
@@ -209,7 +211,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="650" height="650">
 
                 <!--точка для отрисовки попадания-->
-                <circle cx="300" cy="300" class="dot" id="dot" r="5" visibility="visible" stroke="black" fill="black" fill-opacity="0.0"></circle>
+                <circle cx="300" cy="300" class="dot" id="dot" r="5" visibility="visible" stroke="black" fill="black" stroke-opacity="0" fill-opacity="0"></circle>
 
                 <!-- Оси со стрелками -->
                 <line stroke="gray" x1="0" x2="600" y1="300" y2="300" />
@@ -252,13 +254,15 @@
                 <polygon points="200,300 300,400 300,300" fill="#0a0eff" fill-opacity="0.1" stroke="#0c0fff"/>
 
                 <!--Полукруг-->
-                <path d="M 200 300 A 95 95, 0, 0, 1, 300 200 L 300 300 Z" fill="#0a0eff" fill-opacity="0.1"
+                <path d="M 200 300 A 100 100, 0, 0, 1, 300 200 L 300 300 Z" fill="#0a0eff" fill-opacity="0.1"
                       stroke="#0c0fff" />
             </svg>
         </div>
     <div class="footer">
-        <a href="https://frizyyu.github.io" title="my-site">сайтик</a>
+        <p>
+            ВСЕ ПРАВА БЕЗЗАЩИТНЫ | <a href="https://frizyyu.github.io" title="my-site">САЙТИК</a>
+        </p>
     </div>
 </div>
-<script type="module" src="js\main.js"></script>
+<script type="module" src="main.js"></script>
 </body>
