@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Васильев Артём Р3219</title>
+    <style>
+        body {
+            background-image: url("https://i.ytimg.com/vi/p0l1SPvzTQc/maxresdefault.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            font-family: sans-serif;
+            font-size: 20px;
+        }
+
+        .header {
+            font-family: monospace;
+            font-size: 24px;
+            color: aquamarine;
+            text-align: center;
+            text-shadow:
+                    -0   -1px 2px #000000,
+                    0   -1px 2px #000000,
+                    -0    1px 2px #000000,
+                    0    1px 2px #000000,
+                    -1px -0   2px #000000,
+                    1px -0   2px #000000,
+                    -1px  0   2px #000000,
+                    1px  0   2px #000000,
+                    -1px -1px 2px #000000,
+                    1px -1px 2px #000000,
+                    -1px  1px 2px #000000,
+                    1px  1px 2px #000000,
+                    -1px -1px 2px #000000,
+                    1px -1px 2px #000000,
+                    -1px  1px 2px #000000,
+                    1px  1px 2px #000000;
+        }
+
+        .graph-side {
+            height: 80vh;
+            float: right;
+            width: 40%;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.82);
+        }
+
+        svg {
+            margin-top: 10%;
+            width: 90%;
+            height: 90%;
+        }
+
+        .results-side {
+            height: 80vh;
+            float: right;
+            width: 39%;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.82);
+            overflow-x: auto;
+        }
+
+        .res-table {
+            margin: auto;
+            width: 100%;
+        }
+
+        table {
+            max-width: 100%;
+            border-collapse: collapse;
+        }
+
+        tr, th, td {
+            border: 1px solid black;
+        }
+
+        .input-side {
+            height: 80vh;
+            float: left;
+            width: 20%;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.82);
+        }
+
+        .input-group, .btn, .input-log, .shrek {
+            margin-left: 20%;
+        }
+
+        .input-log {
+            color: red;
+        }
+
+        .footer {
+            text-align: center;
+            position: absolute;
+            width: 99%;
+            bottom: 0;
+        }
+        .dot:not(:hover){
+            transition: 1.5s;
+            fill-opacity: 0.5;
+        }
+        a {
+            color: aquamarine;
+            text-shadow:
+                    -0   -1px 2px #000000,
+                    0   -1px 2px #000000,
+                    -0    1px 2px #000000,
+                    0    1px 2px #000000,
+                    -1px -0   2px #000000,
+                    1px -0   2px #000000,
+                    -1px  0   2px #000000,
+                    1px  0   2px #000000,
+                    -1px -1px 2px #000000,
+                    1px -1px 2px #000000,
+                    -1px  1px 2px #000000,
+                    1px  1px 2px #000000,
+                    -1px -1px 2px #000000,
+                    1px -1px 2px #000000,
+                    -1px  1px 2px #000000,
+                    1px  1px 2px #000000;
+        }
+
+        .shrek{
+            margin-left: 20%;
+            margin-top: 5%;
+            margin-bottom: 10%;
+            height: 15%;
+            width: 70%;
+        }
+        .input-group::before{
+            content: "Потыкайте, пожалуйста";
+            color: black;
+        }
+
+        .input-group p {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>Васильев Артём Р3219, вариант 408358</h2>
+    </div>
+    <div class="input-side">
+        <img class="shrek" src="https://media1.tenor.com/m/aGSZzZMTL8IAAAAd/shrek-shrek-dancing.gif" alt="shrek" />
+        <div class="input-group">
+            <p>Выберите X:</p>
+            <div id="coord-x" class="radio-group">
+                <label><input type="radio" name="x" value="-5">-5</label>
+                <label><input type="radio" name="x" value="-4">-4</label>
+                <label><input type="radio" name="x" value="-3">-3</label>
+                <br>
+                <label><input type="radio" name="x" value="-2">-2</label>
+                <label><input type="radio" name="x" value="-1">-1</label>
+                <label><input type="radio" name="x" value="0">0</label>
+                <br>
+                <label><input type="radio" name="x" value="1">1</label>
+                <label><input type="radio" name="x" value="2">2</label>
+                <label><input type="radio" name="x" value="3">3</label>
+            </div>
+            <br>
+            <label for="coord-y">Введите Y: </label>
+            <input type="text" id="coord-y" name="coord-y" />
+            <br>
+            <br>
+            <div class="coord-r">
+                <select class="selectR-class" name="coord-r", id="coord-r">
+                    <option selected="Выберите R:" disabled="Выберите R">Выберите R</option>
+                    <option name="coord-r" value="1" >1</option>
+                    <option name="coord-r" value="2" >2</option>
+                    <option name="coord-r" value="3" >3</option>
+                    <option name="coord-r" value="4" >4</option>
+                    <option name="coord-r" value="5">5</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="btn">
+            <button id="send-btn" type="submit">Отправить</button>
+        </div>
+        <br>
+        <div class="input-log" id="input-log">
+            <!--Поле для вывода ошибок при вводе-->
+        </div>
+        </div>
+    <!--таблица для результатов-->
+        <div class="results-side">
+            <table class="res-table" id="res-table">
+                <tr>
+                    <th>Попали?</th>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>R</th>
+                    <th>Время</th>
+                    <th>Время работы (нс)</th>
+                </tr>
+            </table>
+        </div>
+    <!--график-->
+        <div class="graph-side">
+            <svg xmlns="http://www.w3.org/2000/svg" width="650" height="650">
+
+                <!--точка для отрисовки попадания-->
+                <circle cx="300" cy="300" class="dot" id="dot" r="5" visibility="visible" stroke="black" fill="black" fill-opacity="0.0"></circle>
+
+                <!-- Оси со стрелками -->
+                <line stroke="gray" x1="0" x2="600" y1="300" y2="300" />
+                <line stroke="gray" x1="300" x2="300" y1="0" y2="600" />
+                <polygon points="300,0 294,15 306,15" stroke="white" />
+                <polygon points="600,300 585,306 585,294" stroke="white" />
+
+                <!-- Засечки -->
+                <line stroke="gray" x1="400" x2="400" y1="310" y2="290" />
+                <line stroke="gray" x1="500" x2="500" y1="310" y2="290" />
+
+                <line stroke="gray" x1="200" x2="200" y1="310" y2="290" />
+                <line stroke="gray" x1="100" x2="100" y1="310" y2="290" />
+
+                <line stroke="gray" x1="290" x2="310" y1="100" y2="100" />
+                <line stroke="gray" x1="290" x2="310" y1="200" y2="200" />
+
+                <line stroke="gray" x1="290" x2="310" y1="400" y2="400" />
+                <line stroke="gray" x1="290" x2="310" y1="500" y2="500" />
+
+                <text x="385" y="330">R/2</text>
+                <text x="495" y="330">R</text>
+
+                <text x="90" y="330">-R</text>
+                <text x="180" y="330">-R/2</text>
+
+                <text x="255" y="205">R/2</text>
+                <text x="270" y="105">R</text>
+
+                <text x="250" y="405">-R/2</text>
+                <text x="265" y="505">-R</text>
+
+                <text x="310" y="15">Y</text>
+                <text x="585" y="290">X</text>
+
+                <!--Прямоугольник-->
+                <rect x="300" y="200" width="200" height="100" fill="#0a0eff" fill-opacity="0.1" stroke="#0c0fff"/>
+
+                <!--Треугольник-->
+                <polygon points="200,300 300,400 300,300" fill="#0a0eff" fill-opacity="0.1" stroke="#0c0fff"/>
+
+                <!--Полукруг-->
+                <path d="M 200 300 A 95 95, 0, 0, 1, 300 200 L 300 300 Z" fill="#0a0eff" fill-opacity="0.1"
+                      stroke="#0c0fff" />
+            </svg>
+        </div>
+    <div class="footer">
+        <a href="https://frizyyu.github.io" title="my-site">сайтик</a>
+    </div>
+</div>
+<script type="module" src="js\main.js"></script>
+</body>
