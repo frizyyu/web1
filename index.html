@@ -153,46 +153,48 @@
     </div>
     <div class="input-side">
         <img class="shrek" src="https://media1.tenor.com/m/aGSZzZMTL8IAAAAd/shrek-shrek-dancing.gif" alt="shrek" />
-        <div class="input-group">
-            <p>Выберите X:</p>
-            <div id="coord-x" class="radio-group">
-                <label><input type="radio" name="x" value="-5">-5</label>
-                <label><input type="radio" name="x" value="-4">-4</label>
-                <label><input type="radio" name="x" value="-3">-3</label>
+        <form>
+            <div class="input-group">
+                <p>Выберите X:</p>
+                <div id="coord-x" class="radio-group">
+                    <label><input type="radio" name="x" value="-5">-5</label>
+                    <label><input type="radio" name="x" value="-4">-4</label>
+                    <label><input type="radio" name="x" value="-3">-3</label>
+                    <br>
+                    <label><input type="radio" name="x" value="-2">-2</label>
+                    <label><input type="radio" name="x" value="-1">-1</label>
+                    <label><input type="radio" name="x" value="0">0</label>
+                    <br>
+                    <label><input type="radio" name="x" value="1">1</label>
+                    <label><input type="radio" name="x" value="2">2</label>
+                    <label><input type="radio" name="x" value="3">3</label>
+                </div>
                 <br>
-                <label><input type="radio" name="x" value="-2">-2</label>
-                <label><input type="radio" name="x" value="-1">-1</label>
-                <label><input type="radio" name="x" value="0">0</label>
+                <label for="coord-y">Введите Y: </label>
+                <input type="text" id="coord-y" name="coord-y" />
                 <br>
-                <label><input type="radio" name="x" value="1">1</label>
-                <label><input type="radio" name="x" value="2">2</label>
-                <label><input type="radio" name="x" value="3">3</label>
+                <br>
+                <div class="coord-r">
+                    <select class="selectR-class" name="coord-r", id="coord-r">
+                        <option selected="Выберите R:" disabled="Выберите R">Выберите R</option>
+                        <option name="coord-r" value="1" >1</option>
+                        <option name="coord-r" value="2" >2</option>
+                        <option name="coord-r" value="3" >3</option>
+                        <option name="coord-r" value="4" >4</option>
+                        <option name="coord-r" value="5">5</option>
+                    </select>
+                </div>
             </div>
             <br>
-            <label for="coord-y">Введите Y: </label>
-            <input type="text" id="coord-y" name="coord-y" />
-            <br>
-            <br>
-            <div class="coord-r">
-                <select class="selectR-class" name="coord-r", id="coord-r">
-                    <option selected="Выберите R:" disabled="Выберите R">Выберите R</option>
-                    <option name="coord-r" value="1" >1</option>
-                    <option name="coord-r" value="2" >2</option>
-                    <option name="coord-r" value="3" >3</option>
-                    <option name="coord-r" value="4" >4</option>
-                    <option name="coord-r" value="5">5</option>
-                </select>
+            <div class="btn">
+                <button id="send-btn" type="submit">Отправить</button>
             </div>
-        </div>
-        <br>
-        <div class="btn">
-            <button id="send-btn" type="submit">Отправить</button>
-        </div>
-        <br>
-        <div class="input-log" id="input-log">
-            <!--Поле для вывода ошибок при вводе-->
-        </div>
-        </div>
+            <br>
+            <div class="input-log" id="input-log">
+                <!--Поле для вывода ошибок при вводе-->
+            </div>
+        </form>
+    </div>
     <!--таблица для результатов-->
         <div class="results-side">
             <table class="res-table" id="res-table">
@@ -201,8 +203,8 @@
                     <th>X</th>
                     <th>Y</th>
                     <th>R</th>
+                    <th>Время работы (мс)</th>
                     <th>Время</th>
-                    <th>Время работы (с)</th>
                 </tr>
             </table>
         </div>
