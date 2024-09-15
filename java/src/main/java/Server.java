@@ -31,7 +31,7 @@ class Server {
                         continue;
                     }
                     if (isValid) {
-                        System.out.println(resp(isShot, m.get("x"), m.get("y"), m.get("r"), System.nanoTime() - time));
+                        System.out.println(resp(isShot, m.get("x"), m.get("y"), m.get("r"), time));
                     }
                     else
                         System.out.println(err(v.getErr()));
@@ -58,7 +58,7 @@ class Server {
                 
                 
                 {"result":"%s","x":"%s","y":"%s","r":"%s","time":"%s","workTime":"%s","error":"all ok"}
-                """.formatted(isShoot, x, y, r, LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")), wt);
+                """.formatted(isShoot, x, y, r, (double)(System.nanoTime() - wt) / 10000000, LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
     }
 
     private static String err(String msg) {
