@@ -36,7 +36,7 @@ export default class Validate
     }
 
     checkY(y) {
-        if (/[a-zа-яё]/i.test(y)){
+        if (!/^(-?\d+(\.\d+)?)$/.test(y.value)){
             this.log = "Y должен содержать число"
             return false;
         }
