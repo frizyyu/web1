@@ -38,7 +38,7 @@ class Server {
                         System.out.println(err(v.getErr()));
                 }
                 else
-                   System.out.println("fill");
+                   System.out.println(err("fill"));
             }
             else
                 System.out.println(err("method"));
