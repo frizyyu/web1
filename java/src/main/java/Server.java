@@ -3,6 +3,7 @@ import validation.Validate;
 import check.Checker;
 
 
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashMap;
@@ -53,20 +54,28 @@ class Server {
         return map;
     }
     private static String resp(boolean isShoot, String x, String y, String r, long wt) {
-        return """
-                Content-Type: application/json; charset=utf-8
-                
-                
+        String content = """
                 {"result":"%s","x":"%s","y":"%s","r":"%s","time":"%s","workTime":"%s","error":"all ok"}
                 """.formatted(isShoot, x, y, r, (double)(System.nanoTime() - wt) / 10000000, LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+        return """
+                Content-Type: application/json; charset=utf-8
+                Content-Length: %d
+                
+                
+                %s
+                """.formatted(content.getBytes(StandardCharsets.UTF_8).length, content);
     }
 
     private static String err(String msg) {
-        return """
-                Content-Type: application/json charset=utf-8
-                
-                
+        String content = """
                 {"error":"%s"}
                 """.formatted(msg);
+        return """
+                Content-Type: application/json charset=utf-8
+                Content-Length: %d
+                
+                
+                %s
+                """.formatted(content.getBytes(StandardCharsets.UTF_8).length, content);
     }
 }
